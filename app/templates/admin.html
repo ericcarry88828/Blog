@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Manage</title>
+{% endblock title %}
+
+{% block styles %}
+<link rel="stylesheet" href="../static/admin.css" />
+{% endblock styles %}
+
+{% block content %}
+<div class="page-container">
+    <div class="article-container">
+        <div class="article-grid">
+            {% for item in data %}
+            <div class="article-title">
+                <a href="{{ url_for('blog.article', id=item.id) }}">{{ item.title }}</a>
+            </div>
+
+            <div class="article-edit">
+                <a class="edit-button" href="{{ url_for('admin.edit', id=item.id) }}" role="button">EDIT</a>
+            </div>
+            <div class="article-delete" onclick="deleteArticle('{{ item.id }}')">
+                <button class="delete-button">DELETE</button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="next-page-container">
+        <nav aria-label="Page navigation">{{ pagination.links | safe }}</nav>
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    function deleteArticle(articleId) {
+        if (confirm("你確定要刪除這篇文章嗎？")) {
+            fetch('/delete', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: articleId
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('文章已成功刪除');
+                        // 這裡你可以添加代碼來刷新頁面或更新UI
+                        location.reload();
+                    } else {
+                        alert('刪除失敗，請再試一次');
+
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('發生錯誤，請再試一次');
+                });
+        }
+    }
+</script>
+{% endblock scripts %}

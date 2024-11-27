@@ -1,0 +1,50 @@
+.from-style {
+  display: flex;
+  position: relative;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  row-gap: 12px;
+}
+
+.title-label,
+.title-box,
+.date-label,
+.date-box,
+.content-label,
+.content-box {
+  display: block;
+}
+
+.title-label,
+.date-label,
+.content-label {
+  font-size: 24px;
+}
+
+.content-box {
+  resize: none;
+  width: 100%;
+  height: 400px;
+}
+
+.submit-button {
+  background-color: #ffddc1;
+  color: #8b4513;
+  border: 2px solid #d2691e;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-end;
+  height: 35px;
+  width: 65px;
+  transition: 0.8s;
+}
+
+.submit-button:hover {
+  background-color: #d2691e;
+  color: #ffffff;
+  border-color: #a0522d;
+}

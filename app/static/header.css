@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  height: 70px;
+  position: fixed;
+  background-color: #fffff0;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  justify-content: right;
+  border-bottom: 1px solid rgb(240, 240, 240);
+  z-index: 100;
+}
+
+.right-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  gap: 30px;
+}
+
+.right-section a {
+  text-decoration: none;
+  color: #6b8e23;
+}

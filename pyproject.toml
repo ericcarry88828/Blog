@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "personal blog"
+version = "0.1.0"
+description = ""
+authors = ["ericcarry88828 <ericcarry88828@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^3.1.0"
+bootstrap-flask = "^2.4.1"
+flask-paginate = "^2024.4.12"
+flask-wtf = "^1.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

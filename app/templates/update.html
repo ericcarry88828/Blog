@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="../static/create.css">
+{% endblock %}
+
+{% block content %}
+<div class="from-style">
+    <form action="/articles/{{ data.id }}" class="create-form" method="POST" autocomplete="off">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+        <label for="title" class="title-label">Title</label>
+        <input type="text" id="title" class="title-box" name="title" value="{{ data.title }}" required>
+
+        {# <label for="date" class="date-label">Date</label>
+        <input type="date" id="date" class="date-box" name="date" required> #}
+
+        <label for="content" class="content-label">Content</label>
+        <textarea id="content" class="content-box" name="content" rows="10" required>{{ data.content }}</textarea>
+
+        <button type="submit" class="submit-button">Update</button>
+    </form>
+</div>
+
+</body>
+
+</html>
+{% endblock %}

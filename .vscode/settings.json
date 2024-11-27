@@ -1,0 +1,40 @@
+{
+    // vs setting
+    "explorer.sortOrder": "type",
+    "files.autoSave": "onFocusChange",
+    "editor.fontSize": 18,
+    "editor.formatOnSave": true,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "comment",
+                "settings": {
+                    "foreground": "#ff0000",
+                    "fontStyle": "bold"
+                }
+            },
+        ]
+    },
+    // python setting
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.completeFunctionParens": true,
+    "python.languageServer": "Pylance",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8",
+    },
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    //  jinja html css setting
+    "prettier.useEditorConfig": true,
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "emmet.includeLanguages": {
+        "jinja-html": "html",
+    },
+    "material-icon-theme.languages.associations": {
+        "jinja-html": "jinja"
+    },
+    "files.associations": {
+        "*.html": "jinja-html",
+    },
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block head %}
+  {{ bootstrap.load_css() }}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../static/header.css" />
+  <link rel="stylesheet" type="text/css" href="../static/general.css" />
+
+  {% block styles %}
+  <!-- Page CSS -->
+  {% endblock styles %}
+
+  {% block title %}
+  <!-- Page Title -->
+  {% endblock title %}
+  {% endblock head %}
+</head>
+
+<body>
+  <div class="header">
+    <div class="right-section">
+      <div class="home">
+        <a href="{{ url_for('blog.index') }}">HOME</a>
+      </div>
+      {% if g.user %}
+      <div class="create">
+        <a href="{{ url_for('admin.create') }}">CREATE</a>
+      </div>
+      <div class="admin">
+        <a href="{{ url_for('admin.admin') }}">MANAGE</a>
+      </div>
+      <div class="logout">
+        <a href="{{ url_for('auth.logout') }}">LOGOUT</a>
+      </div>
+      {% else %}
+      <div class="login">
+        <a href="{{ url_for('auth.login') }}">LOGIN</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% block content %}
+  <!-- Your page content -->
+  {% endblock content %}
+
+  {% block scripts %}
+  <!-- Optional JavaScript -->
+  {{ bootstrap.load_js() }}
+  {% endblock scripts %}
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+.article-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  gap: 20px;
+}
+
+.aricle-title {
+  font-size: 48px;
+}
+
+.article-time {
+  font-size: 32px;
+}
+
+.article-content {
+  font-size: 22px;
+  white-space: pre-line;
+}
